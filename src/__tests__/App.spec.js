@@ -50,7 +50,7 @@ describe("Likes", () => {
     const { getByTestId } = render(<App />);
 
     apiMock
-      .onPost(`repositories/${repositoryId}/like`)
+      .onPut(`repositories/${repositoryId}/like`)
       .reply(200, {
         id: repositoryId,
         title: "Desafio React Native",
@@ -68,7 +68,7 @@ describe("Likes", () => {
     expect(getByTestId(`repository-likes-${repositoryId}`)).toHaveTextContent("1 curtida");
 
     apiMock
-      .onPost(`repositories/${repositoryId}/like`)
+      .onPut(`repositories/${repositoryId}/like`)
       .reply(200, {
         id: repositoryId,
         title: "Desafio React Native",
