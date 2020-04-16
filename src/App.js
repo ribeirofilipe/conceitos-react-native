@@ -26,7 +26,7 @@ export default function App() {
   }
 
   async function handleLikeRepository(id) {
-    await api.put(`repositories/${id}/like`);
+    await api.post(`repositories/${id}/like`);
 
     setRepositories(repositories.map(repo => ({
       ...repo,
